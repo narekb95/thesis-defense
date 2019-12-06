@@ -77,11 +77,15 @@
 }
 
 \usepackage{graphicx} % Allows including images
+\usepackage{ulem} % Allows including images
+\usepackage{xcolor} % Allows including images
 
-\title{Fully Polynomial Pareameterized Algrotihms\\For the $T$-Path Packign Problem} % The short title appears at the bottom of every slide, the full title is only on the title page
+\newcommand\rem{\bgroup\markoverwith{\textcolor{red}{\rule[.3ex]{2pt}{1.5pt}}}\ULon}
 
-\author{Narej Bojikian} % Your name
-\institute[Hu-Berlin] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+\title{Fully Polynomial Parameterized Algorithms\\For the $T$-Path Packing Problem} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Narek Bojikian} % Your name
+\institute[Hu-Berlin]
 {
 	Humboldt University of Berlin
 }
@@ -92,7 +96,105 @@
 \begin{frame}
 \titlepage % Print the title page as the first slide
 \end{frame}
-\begin{frame}{Introduction}
+\begin{frame}[t]{Introduction}
+	\vspace{10px}
+	\begin{minipage}[t]{0.6\linewidth}
+		\begin{itemize}[<+->]
+			\item $T$-path packing.
+			\item Odd $T$-path packing.
+			\item $S-T$-path packing.
+			\item[--] Goal: Find maximum set of each.
+			\item Matching.
+		\end{itemize}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.3\linewidth}
+		\centering
+		right part
+	\end{minipage}
+\end{frame}
+\begin{frame}[t]{Reduction - $T$-Path Packing to Matching}
+	\begin{minipage}[t][.4\textheight][t]{\linewidth}
+		An instance of the $T$-path packing problem.
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t][.4\textheight][t]{\linewidth}
+		The corresponding maximum matching instance.
+	\end{minipage}
+\end{frame}
+
+\begin{frame}[t]{Reductions presented in the thesis}
+	\begin{minipage}[t][.3\textheight][t]{\linewidth}
+		\begin{minipage}[t][\textheight][t]{.45\linewidth}
+
+			$T$-path packing first reduction.
+			
+		\end{minipage}
+		\hfill
+		\vline
+		\hfill
+		\begin{minipage}[t][\textheight][t]{.45\linewidth}
+			$T$-path packing second reduction.
+		\end{minipage}
+	\end{minipage}
+		\vfill
+		\hrule
+		\vfill
+	\begin{minipage}[t][.3\textheight][t]{\linewidth}
+		\begin{minipage}[t][\textheight][t]{.45\linewidth}
+			Odd $T$-path packing second reduction.
+		\end{minipage}
+		\hfill
+		\hfill
+		\begin{minipage}[t][\textheight][t]{.45\linewidth}
+			$S-T$-path packing second reduction.
+		\end{minipage}
+	\end{minipage}
+
+\end{frame}
+
+\begin{frame}{Methods and results - Preserving properties}
+[Do two frames per method one example and one list of params]
+
+[todo: check results]
+\end{frame}
+\begin{frame}[t]{Methods and results - Preserving properties}
+	\begin{itemize}
+		\item $T$-path packing:
+		\begin{itemize}
+			\item[--] Tree-depth - at most doubles.
+			\item[--] Tree-width - at most doubles.
+			\item[--] Modular-width - does not change.
+			\item[--] Independence number - does not change.
+			\item[--] Neighborhood diversity number - does not change.
+			\item[--] Chordal graphs - closed under the reduction.
+			\item[--] Interval- Circular-arc- and co-Comparability- graphs - also closed.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Methods and results - Preserving properties}
+	\begin{itemize}
+		\item Odd $T$-path packing:
+			\begin{itemize}
+				\item[--] Neighborhood diversity number\\
+					\hspace{.5cm} - bounded Replaceablity.
+			\end{itemize}
+		\item Odd $T$-path packing and $S-T$-path packing:
+			\begin{itemize}
+				\item[--] Tree-depth, tree-width and modular-width\\
+					\hspace{.5cm} - as in $T$-path packing.
+				\item[--] \rem{Independence number - does not change}
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Methods and results - Simplify, solve and augment}
+\end{frame}
+\begin{frame}{Methods and results - Different problem same solution}
+	Do we even have this?
+\end{frame}
+\begin{frame}{Methods and results - Specific algorithm}
+	Or this?
 \end{frame}
 \end{document}
 
