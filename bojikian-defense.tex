@@ -80,6 +80,9 @@
 \usepackage{ulem} % Allows including images
 \usepackage{xcolor} % Allows including images
 
+\let\oldfootnotesize\footnotesize
+\renewcommand*{\footnotesize}{\oldfootnotesize\tiny}
+
 \newcommand\rem{\bgroup\markoverwith{\textcolor{red}{\rule[.3ex]{2pt}{1.5pt}}}\ULon}
 
 \title{Fully Polynomial Parameterized Algorithms\\For the $T$-Path Packing Problem} % The short title appears at the bottom of every slide, the full title is only on the title page
@@ -104,7 +107,7 @@
 			\item Odd $T$-path packing.
 			\item $S-T$-path packing.
 			\item[--] Goal: Find maximum set of each.
-			\item Matching.
+			\item Maximum Matching - $\nu(G)$.
 		\end{itemize}
 	\end{minipage}\hfill
 	\begin{minipage}[t]{0.3\linewidth}
@@ -171,7 +174,7 @@
 			\item[--] Neighborhood diversity number\\
 				\hspace{.5cm} - does not change.
 			\item[--] $s$-plexes - does not change.
-			\item[--] Chordal graphs - closed under the reduction.
+			\item[--] Strongly chordal graphs - closed\\under the reduction.
 			\item[--] Interval- Circular-arc- and co-Comparability-\\
 				\hspace{.5cm} graphs - also closed.
 		\end{itemize}
@@ -195,6 +198,20 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}[t]{Methods and results - Distance to triviality}
+\vspace{.5cm}
+	\begin{itemize}
+	\item Vertex-deletion distance to a class $d_{\mathcal{C}}(G)$.
+	\item The class of $\ell$-Replaceable graphs $\mathcal{R}[\ell]$.
+	\item For $m := |E(G)|$, $l, k \in \mathbb{N}$,  if $d_{\mathcal{R}[\ell]}(G) \leq k$,\\
+		\hspace{.5cm} then $\nu(G)$ can be found in $O(\sqrt{k}\ell m)$
+		\footnote{On adaptive algorithms for maximum matching, F.Hegerefeld and S.Kratsch, ICALP-2019.}.
+	\end{itemize}
+\end{frame}
+\begin{frame}[t]{Methods and results - Distance to triviality}
+\vspace{.5cm}
+\end{frame}
+
 \begin{frame}{Methods and results - Simplify, solve and augment}
 \end{frame}
 \begin{frame}[t]{Methods and results - Simplify, solve and augment}
@@ -205,5 +222,5 @@
 	\end{itemize}
 	Designed a dynamic programming algorithm in trees.
 \end{frame}
-\end{document}
 
+\end{document}
