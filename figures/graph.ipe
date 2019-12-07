@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20191207151114" modified="D:20191207155225"/>
+<info created="D:20191207151114" modified="D:20191207165759"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -260,7 +260,7 @@ h
 <layer name="odd-t-path"/>
 <layer name="st-path"/>
 <layer name="matching"/>
-<view layers="vertices-st edges" active="vertices-t"/>
+<view layers="vertices-st st-path" active="st-path"/>
 <path layer="edges" stroke="black">
 64 704 m
 96 672 l
@@ -349,226 +349,6 @@ h
 192 704 m
 128 704 l
 </path>
-<path layer="odd-t-path" stroke="black">
-64 704 m
-96 672 l
-</path>
-<path stroke="black">
-128 704 m
-160 672 l
-</path>
-<path stroke="black">
-128 704 m
-96 672 l
-</path>
-<path stroke="black">
-96 672 m
-64 640 l
-</path>
-<path stroke="black">
-64 640 m
-128 640 l
-</path>
-<path stroke="black">
-128 640 m
-96 672 l
-</path>
-<path stroke="black">
-64 704 m
-64 640 l
-</path>
-<path stroke="black">
-96 672 m
-160 672 l
-</path>
-<path stroke="black">
-128 640 m
-160 672 l
-</path>
-<path stroke="black">
-160 672 m
-192 704 l
-</path>
-<path stroke="black">
-192 704 m
-128 704 l
-</path>
-<path stroke="black">
-64 704 m
-96 672 l
-</path>
-<path stroke="black">
-128 704 m
-160 672 l
-</path>
-<path stroke="red">
-128 704 m
-96 672 l
-</path>
-<path stroke="black">
-96 672 m
-64 640 l
-</path>
-<path stroke="black">
-64 640 m
-128 640 l
-</path>
-<path stroke="black">
-128 640 m
-96 672 l
-</path>
-<path stroke="red">
-64 704 m
-64 640 l
-</path>
-<path stroke="red">
-96 672 m
-160 672 l
-</path>
-<path stroke="black">
-128 640 m
-160 672 l
-</path>
-<path stroke="red">
-160 672 m
-192 704 l
-</path>
-<path stroke="black">
-192 704 m
-128 704 l
-</path>
-<path layer="st-path" stroke="black">
-64 704 m
-96 672 l
-</path>
-<path stroke="black">
-128 704 m
-160 672 l
-</path>
-<path stroke="black">
-128 704 m
-96 672 l
-</path>
-<path stroke="black">
-96 672 m
-64 640 l
-</path>
-<path stroke="black">
-64 640 m
-128 640 l
-</path>
-<path stroke="black">
-128 640 m
-96 672 l
-</path>
-<path stroke="black">
-64 704 m
-64 640 l
-</path>
-<path stroke="black">
-96 672 m
-160 672 l
-</path>
-<path stroke="black">
-128 640 m
-160 672 l
-</path>
-<path stroke="black">
-160 672 m
-192 704 l
-</path>
-<path stroke="black">
-192 704 m
-128 704 l
-</path>
-<path stroke="black">
-64 704 m
-96 672 l
-</path>
-<path stroke="black">
-128 704 m
-160 672 l
-</path>
-<path stroke="black">
-128 704 m
-96 672 l
-</path>
-<path stroke="black">
-96 672 m
-64 640 l
-</path>
-<path stroke="black">
-64 640 m
-128 640 l
-</path>
-<path stroke="black">
-128 640 m
-96 672 l
-</path>
-<path stroke="black">
-64 704 m
-64 640 l
-</path>
-<path stroke="black">
-96 672 m
-160 672 l
-</path>
-<path stroke="black">
-128 640 m
-160 672 l
-</path>
-<path stroke="black">
-160 672 m
-192 704 l
-</path>
-<path stroke="black">
-192 704 m
-128 704 l
-</path>
-<path stroke="red">
-64 704 m
-96 672 l
-</path>
-<path stroke="black">
-128 704 m
-160 672 l
-</path>
-<path stroke="black">
-128 704 m
-96 672 l
-</path>
-<path stroke="black">
-96 672 m
-64 640 l
-</path>
-<path stroke="black">
-64 640 m
-128 640 l
-</path>
-<path stroke="black">
-128 640 m
-96 672 l
-</path>
-<path stroke="black">
-64 704 m
-64 640 l
-</path>
-<path stroke="red">
-96 672 m
-160 672 l
-</path>
-<path stroke="black">
-128 640 m
-160 672 l
-</path>
-<path stroke="red">
-160 672 m
-192 704 l
-</path>
-<path stroke="black">
-192 704 m
-128 704 l
-</path>
 <path layer="matching" stroke="black">
 64 704 m
 96 672 l
@@ -613,13 +393,6 @@ h
 192 704 m
 128 704 l
 </path>
-<use layer="vertices-st" name="mark/disk(sx)" pos="64 704" size="large" stroke="red"/>
-<use name="mark/disk(sx)" pos="128 704" size="large" stroke="blue"/>
-<use name="mark/disk(sx)" pos="64 640" size="large" stroke="red"/>
-<use name="mark/disk(sx)" pos="128 640" size="large" stroke="black"/>
-<use name="mark/disk(sx)" pos="96 672" size="large" stroke="black"/>
-<use name="mark/disk(sx)" pos="192 704" size="large" stroke="blue"/>
-<use name="mark/disk(sx)" pos="160 672" size="large" stroke="black"/>
 <use layer="vertices" name="mark/disk(sx)" pos="64 704" size="large" stroke="black"/>
 <use name="mark/disk(sx)" pos="128 704" size="large" stroke="black"/>
 <use name="mark/disk(sx)" pos="64 640" size="large" stroke="black"/>
@@ -627,12 +400,107 @@ h
 <use name="mark/disk(sx)" pos="96 672" size="large" stroke="black"/>
 <use name="mark/disk(sx)" pos="192 704" size="large" stroke="black"/>
 <use name="mark/disk(sx)" pos="160 672" size="large" stroke="black"/>
+<path layer="odd-t-path" stroke="black">
+64 704 m
+96 672 l
+</path>
+<path stroke="black">
+128 704 m
+160 672 l
+</path>
+<path stroke="red">
+128 704 m
+96 672 l
+</path>
+<path stroke="black">
+96 672 m
+64 640 l
+</path>
+<path stroke="black">
+64 640 m
+128 640 l
+</path>
+<path stroke="black">
+128 640 m
+96 672 l
+</path>
+<path stroke="red">
+64 704 m
+64 640 l
+</path>
+<path stroke="red">
+96 672 m
+160 672 l
+</path>
+<path stroke="black">
+128 640 m
+160 672 l
+</path>
+<path stroke="red">
+160 672 m
+192 704 l
+</path>
+<path stroke="black">
+192 704 m
+128 704 l
+</path>
 <use layer="vertices-t" name="mark/disk(sx)" pos="64 704" size="large" stroke="red"/>
 <use name="mark/disk(sx)" pos="128 704" size="large" stroke="red"/>
 <use name="mark/disk(sx)" pos="64 640" size="large" stroke="red"/>
 <use name="mark/disk(sx)" pos="128 640" size="large" stroke="black"/>
 <use name="mark/disk(sx)" pos="96 672" size="large" stroke="black"/>
 <use name="mark/disk(sx)" pos="192 704" size="large" stroke="red"/>
+<use name="mark/disk(sx)" pos="160 672" size="large" stroke="black"/>
+<path layer="st-path" stroke="red">
+64 704 m
+96 672 l
+</path>
+<path stroke="black">
+128 704 m
+160 672 l
+</path>
+<path stroke="black">
+128 704 m
+96 672 l
+</path>
+<path stroke="black">
+96 672 m
+64 640 l
+</path>
+<path stroke="black">
+64 640 m
+128 640 l
+</path>
+<path stroke="black">
+128 640 m
+96 672 l
+</path>
+<path stroke="black">
+64 704 m
+64 640 l
+</path>
+<path stroke="red">
+96 672 m
+160 672 l
+</path>
+<path stroke="black">
+128 640 m
+160 672 l
+</path>
+<path stroke="red">
+160 672 m
+192 704 l
+</path>
+<path stroke="black">
+192 704 m
+128 704 l
+</path>
+<use layer="vertices-st" name="mark/disk(sx)" pos="64 704" size="large" stroke="red"/>
+<use name="mark/disk(sx)" pos="128 704" size="large" stroke="blue"/>
+<use name="mark/disk(sx)" pos="64 640" size="large" stroke="red"/>
+<use name="mark/disk(sx)" pos="128 640" size="large" stroke="black"/>
+<use name="mark/disk(sx)" pos="96 672" size="large" stroke="black"/>
+<use name="mark/disk(sx)" pos="192 704" size="large" stroke="blue"/>
 <use name="mark/disk(sx)" pos="160 672" size="large" stroke="black"/>
 </page>
 </ipe>
