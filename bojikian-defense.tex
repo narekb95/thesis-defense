@@ -99,22 +99,49 @@
 \begin{frame}
 \titlepage % Print the title page as the first slide
 \end{frame}
+%\begin{frame}[t]{Introduction}
+%	\vspace{10px}
+%	\begin{minipage}[t]{0.5\linewidth}
+%		\begin{itemize}[<+->]
+%			\item $T$-path packing.
+%			\item Odd $T$-path packing.
+%			\item $S-T$-path packing.
+%			\item[--] Goal: Find maximum set of each.
+%			\item Maximum Matching - $\nu(G)$.
+%		\end{itemize}
+%	\end{minipage}\hfill
+%	\begin{minipage}{0.5\linewidth}
+%		\centering
+%		\includegraphics{figures/graph.eps}
+%	\end{minipage}
+%\end{frame}
+
 \begin{frame}[t]{Introduction}
-	\vspace{10px}
-	\begin{minipage}[t]{0.6\linewidth}
-		\begin{itemize}[<+->]
-			\item $T$-path packing.
-			\item Odd $T$-path packing.
-			\item $S-T$-path packing.
-			\item[--] Goal: Find maximum set of each.
-			\item Maximum Matching - $\nu(G)$.
-		\end{itemize}
-	\end{minipage}\hfill
-	\begin{minipage}[t]{0.3\linewidth}
-		\centering
-		right part
-	\end{minipage}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}[<+->]
+				\uncover<1->{\item $T$-path packing.}
+				\uncover<3->{\item Odd $T$-path packing.}
+				\uncover<5->{\item $S-T$-path packing.}
+				\uncover<7->{\item[--] Goal: Find maximum set of each.}
+				\uncover<8->{\item Maximum Matching - $\nu(G)$.}
+			\end{itemize}
+		\end{column}
+		\begin{column}[c]{.5\textwidth}
+			\centering
+			\vspace{2cm}
+			\only<1>{\makebox[\textwidth][c]{\includegraphics{figures/t-graph.eps}}}
+			\only<2>{\makebox[\textwidth][c]{\includegraphics{figures/t-path.eps}}}
+			\only<3>{\makebox[\textwidth][c]{\includegraphics{figures/t-graph.eps}}}
+			\only<4>{\makebox[\textwidth][c]{\includegraphics{figures/odd-t-path.eps}}}
+			\only<5>{\makebox[\textwidth][c]{\includegraphics{figures/st-graph.eps}}}
+			\only<6-7>{\makebox[\textwidth][c]{\includegraphics{figures/st-path.eps}}}
+			\only<8>{\makebox[\textwidth][c]{\includegraphics{figures/graph.eps}}}
+			\only<9>{\makebox[\textwidth][c]{\includegraphics{figures/matching.eps}}}
+		\end{column}
+	\end{columns}
 \end{frame}
+
 \begin{frame}[t]{Reduction - $T$-Path Packing to Matching}
 	\begin{minipage}[t][.4\textheight][t]{\linewidth}
 		An instance of the $T$-path packing problem.
