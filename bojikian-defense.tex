@@ -254,6 +254,7 @@
 	\uncover<4->{\item The reductions preserve the distance to parameters values.\\}
 		\uncover<5->{Let $\rho_G$ be the value of the parameter in $G$. Consider the class $\mathcal{C}_n := \{G : \rho_G \leq n\}$. For a reduction $f$, such that $f(C_n) \subseteq C_{g(n)}$ for some computeable function $g$,\\
 	\hspace{.5cm} we get \textcolor{blue}{$d_{\mathcal{C}_{g(n)}}(f(G)) \leq 2d_{C_n}(G)$}.}
+	\uncover<6->{\item If maximum matching can be solved efficiently on $G$, it can be solved efficiently on $f(G)$.}
 	\end{itemize}
 \end{frame}
 
@@ -281,15 +282,15 @@
 \end{frame}
 
 \begin{frame}[t]{Methods and results - Simplify, solve and augment}
-	\begin{itemize}
+	\begin{itemize}[<+->]
 		\item Sometimes parameters can be seen from\\
 			\hspace{.5cm} a different perspective.
 		\item[--] The feedback vertex number of a graph\\
 			\hspace{.5cm} is the size of the smallest set of vertices\\
-			\hspace{.5cm} that intersect all cycles in the graph.
+			\hspace{.5cm} that intersects all cycles in the graph.
 		\item Equivalently, the feedback vertex number of a graph $G$\\
 			\hspace{.5cm} is the vertex-deletion distance of this graph\\
-			\hspace{.5cm} to forests - $d_{\mathcal{T}}(G)$\footnote{For $\mathcal{T}$ the class of forests.}.
+			\hspace{.5cm} from forests\footnote{For $\mathcal{T}$ the class of forests.} - $d_{\mathcal{T}}(G)$.
 		\item Let $\rho$ be a parameter defined as \\ \hspace{.5cm} - the vertex-deletion distance to a class $\mathcal{C}$.
 		\item Assume $T$-Path Packing admits an efficient algorithm $\mathcal{A}$ in $\mathcal{C}$.\\ \hspace{.5cm} - Then we get an algorithm for $G$ parameterized by $\rho$.
 	\end{itemize}
@@ -325,7 +326,7 @@
 		\item Vertex Cover Number\\ \hspace{.5cm} - simplify to an independent set.
 		\item Feedback Vertex Number\\ \hspace{.5cm} - simplify to a forest.
 	\end{itemize}
-	Designed a dynamic programming algorithm in trees.
+	Designed a dynamic programming algorithm for each of the problems in forests.
 \end{frame}
 
 \end{document}
