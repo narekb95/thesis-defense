@@ -85,7 +85,7 @@
 
 \newcommand\rem{\bgroup\markoverwith{\textcolor{red}{\rule[.3ex]{2pt}{1.5pt}}}\ULon}
 
-\title{Fully Polynomial Parameterized Algorithms\\For the $T$-Path Packing Problem} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title{Fully Polynomial Parameterized Algorithms\\For the \texorpdfstring{$T$}{T}-Path Packing Problem} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Narek Bojikian} % Your name
 \institute[Hu-Berlin]
@@ -165,18 +165,17 @@
 \begin{frame}[t]{Methods and results - Preserving properties}
 \vspace{.5cm}
 	\begin{itemize}
-		\item $T$-path packing:
+		\item $T$-path packing (using the second reduction):
 		\begin{itemize}
-			\item[--] Tree-depth - at most doubles.
-			\item[--] Tree-width - at most doubles.
-			\item[--] Modular-width - does not change.
-			\item[--] Independence number - does not change.
-			\item[--] Neighborhood diversity number\\
-				\hspace{.5cm} - does not change.
-			\item[--] $s$-plexes - does not change.
-			\item[--] Strongly chordal graphs - closed\\under the reduction.
-			\item[--] Interval- Circular-arc- and co-Comparability-\\
-				\hspace{.5cm} graphs - also closed.
+			\item[--] Tree-depth.
+			\item[--] Tree-width.\\ \hspace{.5cm} The value at most doubles.
+			\item[--] Modular-width.
+			\item[--] Independence number.
+			\item[--] Neighborhood diversity number.
+			\item[--] $s$-plexes.\\ \hspace{.5cm} The value does not change.
+			\item[--] Strongly chordal graphs.
+			\item[--] Interval- Circular-arc- and co-Comparability- graphs.\\
+				\hspace{.5cm} The classes are closed under this reduction.
 		\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -200,16 +199,42 @@
 
 \begin{frame}[t]{Methods and results - Distance to triviality}
 \vspace{.5cm}
-	\begin{itemize}
-	\item Vertex-deletion distance to a class $d_{\mathcal{C}}(G)$.
-	\item The class of $\ell$-Replaceable graphs $\mathcal{R}[\ell]$.
-	\item For $m := |E(G)|$, $l, k \in \mathbb{N}$,  if $d_{\mathcal{R}[\ell]}(G) \leq k$,\\
-		\hspace{.5cm} then $\nu(G)$ can be found in $O(\sqrt{k}\ell m)$
-		\footnote{On adaptive algorithms for maximum matching, F.Hegerefeld and S.Kratsch, ICALP-2019.}.
+\begin{itemize}
+	\uncover<1->{\item Vertex-deletion distance to a class - $d_{\mathcal{\mathcal{C}}}(G)$.}
+
+
+	\uncover<2->{\item The reductions preserve the distance to triviality.\\}
+		\uncover<3->{Given a graph $G$, a class $\mathcal{C}$ and any of the reductions $f$ such that\\
+		\hspace{.5cm} $\mathcal{C}$ is closed under $f$ and $d_{\mathcal{C}}(G) \leq k$, then
+	\hspace{.5cm} \textcolor{blue}{$d_{\mathcal{C}}(f(G)) \leq 2k$}.}
+
+	\uncover<4->{\item The reductions preserve the distance to parameters values.\\}
+		\uncover<5->{Let $\rho_G$ be the value of the parameter in $G$. Consider the class $\mathcal{C}_n := \{G : \rho_G \leq n\}$. For a reduction $f$, such that $f(C_n) \subseteq C_{g(n)}$ for some computeable function $g$,\\
+	\hspace{.5cm} we get \textcolor{blue}{$d_{\mathcal{C}_{g(n)}}(f(G)) \leq 2d_{C_n}(G)$}.}
 	\end{itemize}
 \end{frame}
+
 \begin{frame}[t]{Methods and results - Distance to triviality}
 \vspace{.5cm}
+\begin{itemize}
+	\uncover<1->{\item $T$-Path Packing.
+		\begin{itemize}
+			\item[--] Neighborhood diversity number.
+			\item[--] $s$-plexes.
+			\item[--] Independence number. [Again, only for this problem.]
+		\end{itemize} }
+	\uncover<2->{\item Odd $T$-Path Packing.\\
+		Neighborhood diversity number.
+		\begin{itemize}
+			\uncover<3->{\item[--] The class of $\ell$-Replaceable graphs - $\mathcal{R}[\ell]$.}
+			\uncover<4->{\item[--] or $m := |E(G)|$, $l, k \in \mathbb{N}$,  if $d_{\mathcal{R}[\ell]}(G) \leq k$,\\
+				\hspace{.5cm} then $\nu(G)$ can be found in $O(\sqrt{k}\ell m)$
+				\footnote{On adaptive algorithms for maximum matching, F.Hegerefeld and S.Kratsch, ICALP-2019.}.}
+			\uncover<5->{\item[--] For $G'$ the graph resulting from $G$ when we apply the second reduction.\\
+				If the Neighborhood diversity number of $G$ is at most $k$ then $G'$ is at most $2k$ replaceable.}
+		\end{itemize}
+	}
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Methods and results - Simplify, solve and augment}
