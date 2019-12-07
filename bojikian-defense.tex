@@ -83,6 +83,8 @@
 \let\oldfootnotesize\footnotesize
 \renewcommand*{\footnotesize}{\oldfootnotesize\tiny}
 
+\newcommand{\tm}{\mathrm{time}}
+
 \newcommand\rem{\bgroup\markoverwith{\textcolor{red}{\rule[.3ex]{2pt}{1.5pt}}}\ULon}
 
 \title{Fully Polynomial Parameterized Algorithms\\For the \texorpdfstring{$T$}{T}-Path Packing Problem} % The short title appears at the bottom of every slide, the full title is only on the title page
@@ -184,12 +186,24 @@
 
 \end{frame}
 
-\begin{frame}{Methods and results - Preserving properties}
-[Do two frames per method one example and one list of params]
+\begin{frame}[t]{Methods and results - Preserving properties}
+	\begin{itemize}[<+->]
+		\item Let $\mathcal{A}$ be an efficient \textbf{polynomial-time}$^{(*)}$ algorithm for matching in a class $\mathcal{C}$.
+		\item Let $f$ be a reduction from a problem $P$ to maximum matching.
+		\item Assume $f$ can be computed efficiently and the size of the output is bounded in a \textbf{linear function}$^{(**)}$ in the size of $G$.
+		\item Assume $\mathcal{C}$ is closed under $f$.\\
+			\uncover<5->{\hspace{.5cm} - Then we get an efficient algorithm for $P$ in $\mathcal{C}$.}
+	\end{itemize}
 
-[todo: check results]
+	\vspace{1cm}
 
-[todo: add running times?]
+	\uncover<6->{
+	\begin{block}{$A'$ - Efficient algorithm for $P$}
+		Given a graph $G$. Compute $G' := f(G)$ and apply $\mathcal{A}$ on $G'$.
+	\end{block}}
+
+	\uncover<7->{$$\tm_{A'}(G) = \tm_f(G) + \tm_A(G') \underset{(*,**)}{=} O(\tm_f(G) + \tm_A(G))$$}
+
 \end{frame}
 \begin{frame}[t]{Methods and results - Preserving properties}
 \vspace{.5cm}
@@ -250,24 +264,61 @@
 		\begin{itemize}
 			\item[--] Neighborhood diversity number.
 			\item[--] $s$-plexes.
-			\item[--] Independence number. [Again, only for this problem.]
+			\item[--] Independence number.
 		\end{itemize} }
 	\uncover<2->{\item Odd $T$-Path Packing.\\
 		Neighborhood diversity number.
 		\begin{itemize}
 			\uncover<3->{\item[--] The class of $\ell$-Replaceable graphs - $\mathcal{R}[\ell]$.}
-			\uncover<4->{\item[--] or $m := |E(G)|$, $l, k \in \mathbb{N}$,  if $d_{\mathcal{R}[\ell]}(G) \leq k$,\\
+			\uncover<4->{\item[--] For $m := |E(G)|$, $l, k \in \mathbb{N}$,  if $d_{\mathcal{R}[\ell]}(G) \leq k$,\\
 				\hspace{.5cm} then $\nu(G)$ can be found in $O(\sqrt{k}\ell m)$
 				\footnote{On adaptive algorithms for maximum matching, F.Hegerefeld and S.Kratsch, ICALP-2019.}.}
 			\uncover<5->{\item[--] For $G'$ the graph resulting from $G$ when we apply the second reduction.\\
-				If the Neighborhood diversity number of $G$ is at most $k$ then $G'$ is at most $2k$ replaceable.}
+			If the Neighborhood diversity number of $G$ is at most $k$ then $G'$ is at most $O(k^2)$ replaceable.}
 		\end{itemize}
 	}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Methods and results - Simplify, solve and augment}
+\begin{frame}[t]{Methods and results - Simplify, solve and augment}
+	\begin{itemize}
+		\item Sometimes parameters can be seen from\\
+			\hspace{.5cm} a different perspective.
+		\item[--] The feedback vertex number of a graph\\
+			\hspace{.5cm} is the size of the smallest set of vertices\\
+			\hspace{.5cm} that intersect all cycles in the graph.
+		\item Equivalently, the feedback vertex number of a graph $G$\\
+			\hspace{.5cm} is the vertex-deletion distance of this graph\\
+			\hspace{.5cm} to forests - $d_{\mathcal{T}}(G)$\footnote{For $\mathcal{T}$ the class of forests.}.
+		\item Let $\rho$ be a parameter defined as \\ \hspace{.5cm} - the vertex-deletion distance to a class $\mathcal{C}$.
+		\item Assume $T$-Path Packing admits an efficient algorithm $\mathcal{A}$ in $\mathcal{C}$.\\ \hspace{.5cm} - Then we get an algorithm for $G$ parameterized by $\rho$.
+	\end{itemize}
 \end{frame}
+
+\begin{frame}[t]{Methods and results - Simplify, solve and augment}
+	\begin{block}{A' - Parameterized algorithm}
+		\begin{itemize}[<+->]
+			\item Let $S$ be a modulator in $G$ and $H := G \setminus S$, i.e. $H \in \mathcal{C}$.
+			\item Apply $\mathcal{A}$ on $H$.
+			\item Apply the first reduction on $H$ to get $H'$.\\
+			\item Find a maximum matching in $H$ (using the reduction).
+			\item Turn $H$ into $G$ by adding $S$ back to the graph\\
+				\hspace{.5cm} - turns $H'$ into $G'$ by adding at most $2|S|$ vertices.
+			\item Find a maximum matching in $G'$\\
+				\hspace{.5cm} - by finding at most $2|S|$ augmenting paths.
+			\item Find a maximum $T$-path packing in $G$ (using the reduction).
+		\end{itemize}
+	\end{block}
+	\vspace{-.5cm}
+	\uncover<8->{
+	\begin{align*}
+		\tm_{A'}(G) &= O(n+m + \tm_{A}(H) + (2|S|(n+m)))\\
+		&= O(\tm_{A}(G \setminus S) + |S|(n+m)),
+	\end{align*}
+	where $n$ is the number of the vertices and $m$ is the number edges in $G$.
+}
+\end{frame}
+
 \begin{frame}[t]{Methods and results - Simplify, solve and augment}
 \vspace{.5cm}
 	\begin{itemize}
