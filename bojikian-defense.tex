@@ -215,12 +215,18 @@
 			\item[--] Modular-width.
 			\item[--] Independence number.
 			\item[--] Neighborhood diversity number.
-			\item[--] $s$-plexes.\\ \hspace{.5cm} The value does not change.
-			\item[--] Strongly chordal graphs.
-			\item[--] Interval- Circular-arc- and co-Comparability- graphs.\\
-				\hspace{.5cm} The classes are closed under this reduction.
+			\item[--] $s$-plexes.\\ \hspace{.5cm} The value does not change.\\
+				\hspace{5cm} \textcolor{blue}{ .. Running time $O(k(n+m))$}
+			\item[--] Strongly chordal -, Interval- and co-Comparability- graphs.\\
+				\hspace{.5cm} The classes are closed under this reduction.\\
+				\hspace{5cm} \textcolor{blue}{ .. Running time $O(n+m)$}
+			\item[--] Circular-arc graphs.\\
+				\hspace{.5cm} The classes are closed under this reduction.\\
+				\hspace{5cm} \textcolor{blue}{ .. Running time $O((n+m)\log(n))$}
 		\end{itemize}
 	\end{itemize}
+	\hrule
+	{\tiny For $n$ the number of the vertices and $m$ the number edges in the graph $G$.}
 \end{frame}
 
 \begin{frame}[t]{Methods and results - Preserving properties}
@@ -228,14 +234,15 @@
 	\begin{itemize}
 		\item Odd $T$-path packing:
 			\begin{itemize}
-				\item[--] Neighborhood diversity number\\
-					\hspace{.5cm} - bounded Replaceablity.
+				\item[--] Neighborhood diversity number.\\
+					\hspace{.5cm} - Bounded Replaceablity $O(k^2)$.\\
+				\hspace{5cm} \textcolor{blue}{ .. Running time $O(k^2(n+m))$}
 			\end{itemize}
 		\item Odd $T$-path packing and $S-T$-path packing:
 			\begin{itemize}
-				\item[--] Tree-depth, tree-width and modular-width\\
-					\hspace{.5cm} - as in $T$-path packing.
-				\item[--] \rem{Independence number - does not change}
+				\item[--] Tree-depth and tree-width.\\ \hspace{.5cm} The value at most doubles.\\
+				\hspace{5cm} \textcolor{blue}{ .. Running time $O(k(n+m))$}
+				\item[--] \rem{Independence number - does not change.}
 			\end{itemize}
 	\end{itemize}
 \end{frame}
@@ -265,7 +272,8 @@
 		\begin{itemize}
 			\item[--] Neighborhood diversity number.
 			\item[--] $s$-plexes.
-			\item[--] Independence number.
+			\item[--] Independence number.\\
+				\hspace{5cm} \textcolor{blue}{ .. Running time $O(\sqrt{d}k(n+m))$}
 		\end{itemize} }
 	\uncover<2->{\item Odd $T$-Path Packing.\\
 		Neighborhood diversity number.
@@ -275,7 +283,8 @@
 				\hspace{.5cm} then $\nu(G)$ can be found in $O(\sqrt{k}\ell m)$
 				\footnote{On adaptive algorithms for maximum matching, F.Hegerefeld and S.Kratsch, ICALP-2019.}.}
 			\uncover<5->{\item[--] For $G'$ the graph resulting from $G$ when we apply the second reduction.\\
-			If the Neighborhood diversity number of $G$ is at most $k$ then $G'$ is at most $O(k^2)$ replaceable.}
+			If the Neighborhood diversity number of $G$ is at most $k$ then $G'$ is at most $O(k^2)$ replaceable.\\}
+			\uncover<6->{\hspace{5cm} \textcolor{blue}{ .. Running time $O(\sqrt{d}k^2(n+m))$}}
 		\end{itemize}
 	}
 \end{itemize}
@@ -314,17 +323,23 @@
 	\uncover<8->{
 	\begin{align*}
 		\tm_{A'}(G) &= O(n+m + \tm_{A}(H) + (2|S|(n+m)))\\
-		&= O(\tm_{A}(G \setminus S) + |S|(n+m)),
+		&= O(\tm_{A}(G \setminus S) + |S|(n+m)).
 	\end{align*}
-	where $n$ is the number of the vertices and $m$ is the number edges in $G$.
+	\hrule
+	{\tiny For $n$ the number of the vertices and $m$ the number edges in the graph $G$.}
 }
 \end{frame}
 
 \begin{frame}[t]{Methods and results - Simplify, solve and augment}
 \vspace{.5cm}
 	\begin{itemize}
-		\item Vertex Cover Number\\ \hspace{.5cm} - simplify to an independent set.
-		\item Feedback Vertex Number\\ \hspace{.5cm} - simplify to a forest.
+		\item Vertex Cover Number\\ \hspace{.5cm} - simplify to an independent set.\\
+			{
+				
+				\hspace{3cm}Running time \textcolor{blue}{ $O(k(n+m))$}$\rightarrow$\textcolor{green}{$O(\sqrt k (n+m)$}\footnote{suggested by Prof. Kratsch.}
+			}
+		\item Feedback Vertex Number\\ \hspace{.5cm} - simplify to a forest.\\
+				\hspace{5cm} \textcolor{blue}{ .. Running time $O(k(n+m))$}
 	\end{itemize}
 	Designed a dynamic programming algorithm for each of the problems in forests.
 \end{frame}
