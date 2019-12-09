@@ -110,7 +110,7 @@
 				\uncover<3->{\item Odd $T$-path packing.}
 				\uncover<5->{\item $S-T$-path packing.}
 				\uncover<7->{\item[--] Goal: Find maximum set of each.}
-				\uncover<8->{\item Maximum Matching - $\nu(G)$.}
+				\uncover<9->{\item Maximum Matching - $\nu(G)$.}
 			\end{itemize}
 		\end{column}
 		\begin{column}[c]{.5\textwidth}
@@ -122,8 +122,9 @@
 			\only<4>{\makebox[\textwidth][c]{\includegraphics{figures/odd-t-path.eps}}}
 			\only<5>{\makebox[\textwidth][c]{\includegraphics{figures/st-graph.eps}}}
 			\only<6-7>{\makebox[\textwidth][c]{\includegraphics{figures/st-path.eps}}}
-			\only<8>{\makebox[\textwidth][c]{\includegraphics{figures/graph.eps}}}
-			\only<9>{\makebox[\textwidth][c]{\includegraphics{figures/matching.eps}}}
+			\only<8>{\makebox[\textwidth][c]{\includegraphics{figures/st-optimal.eps}}}
+			\only<9>{\makebox[\textwidth][c]{\includegraphics{figures/graph.eps}}}
+			\only<10>{\makebox[\textwidth][c]{\includegraphics{figures/matching.eps}}}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -211,11 +212,11 @@
 		\item $T$-path packing (using the second reduction):
 		\begin{itemize}
 			\item[--] Tree-depth.
-			\item[--] Tree-width.\\ \hspace{.5cm} The value at most doubles.
+			\item[--] Tree-width.
+			\item[--] $s$-plexes.\\ \hspace{.5cm} The value at most doubles.
 			\item[--] Modular-width.
 			\item[--] Independence number.
-			\item[--] Neighborhood diversity number.
-			\item[--] $s$-plexes.\\ \hspace{.5cm} The value does not change.\\
+			\item[--] Neighborhood diversity number.\\ \hspace{.5cm} The value does not change.\\
 				\hspace{5cm} \textcolor{blue}{ .. Running time $O(k(n+m))$}
 			\item[--] Strongly chordal -, Interval- and co-Comparability- graphs.\\
 				\hspace{.5cm} The classes are closed under this reduction.\\
@@ -261,7 +262,7 @@
 	\uncover<4->{\item The reductions preserve the distance to parameters values.\\}
 		\uncover<5->{Let $\rho_G$ be the value of the parameter in $G$. Consider the class $\mathcal{C}_n := \{G : \rho_G \leq n\}$. For a reduction $f$, such that $f(C_n) \subseteq C_{g(n)}$ for some computeable function $g$,\\
 	\hspace{.5cm} we get \textcolor{blue}{$d_{\mathcal{C}_{g(n)}}(f(G)) \leq 2d_{C_n}(G)$}.}
-	\uncover<6->{\item If maximum matching can be solved efficiently on $G$, it can be solved efficiently on $f(G)$.}
+	\uncover<6->{\item If maximum matching can be solved efficiently in $G$, it can be solved efficiently in $f(G)$.}
 	\end{itemize}
 \end{frame}
 
@@ -279,8 +280,8 @@
 		Neighborhood diversity number.
 		\begin{itemize}
 			\uncover<3->{\item[--] The class of $\ell$-Replaceable graphs - $\mathcal{R}[\ell]$.}
-			\uncover<4->{\item[--] For $m := |E(G)|$, $l, k \in \mathbb{N}$,  if $d_{\mathcal{R}[\ell]}(G) \leq k$,\\
-				\hspace{.5cm} then $\nu(G)$ can be found in $O(\sqrt{k}\ell m)$
+			\uncover<4->{\item[--] For $m := |E(G)|$, $l, d \in \mathbb{N}$,  if $d_{\mathcal{R}[\ell]}(G) \leq d$,\\
+				\hspace{.5cm} then $\nu(G)$ can be found in $O(\sqrt{d}\ell m)$
 				\footnote{On adaptive algorithms for maximum matching, F.Hegerefeld and S.Kratsch, ICALP-2019.}.}
 			\uncover<5->{\item[--] For $G'$ the graph resulting from $G$ when we apply the second reduction.\\
 			If the Neighborhood diversity number of $G$ is at most $k$ then $G'$ is at most $O(k^2)$ replaceable.\\}
@@ -323,7 +324,7 @@
 	\uncover<8->{
 	\begin{align*}
 		\tm_{A'}(G) &= O(n+m + \tm_{A}(H) + (2|S|(n+m)))\\
-		&= O(\tm_{A}(G \setminus S) + |S|(n+m)).
+		&= O(\tm_{A}(G \setminus S) + \rho(n+m)).
 	\end{align*}
 	\hrule
 	{\tiny For $n$ the number of the vertices and $m$ the number edges in the graph $G$.}

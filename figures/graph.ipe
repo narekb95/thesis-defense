@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70206" creator="Ipe 7.2.7">
-<info created="D:20191207151114" modified="D:20191207165759"/>
+<info created="D:20191207151114" modified="D:20191209005501"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -260,7 +260,8 @@ h
 <layer name="odd-t-path"/>
 <layer name="st-path"/>
 <layer name="matching"/>
-<view layers="vertices-st st-path" active="st-path"/>
+<layer name="st-optimal"/>
+<view layers="vertices-st st-optimal" active="st-optimal"/>
 <path layer="edges" stroke="black">
 64 704 m
 96 672 l
@@ -484,6 +485,50 @@ h
 160 672 l
 </path>
 <path stroke="black">
+128 640 m
+160 672 l
+</path>
+<path stroke="red">
+160 672 m
+192 704 l
+</path>
+<path stroke="black">
+192 704 m
+128 704 l
+</path>
+<path layer="st-optimal" stroke="red">
+64 704 m
+96 672 l
+</path>
+<path stroke="black">
+128 704 m
+160 672 l
+</path>
+<path stroke="red">
+128 704 m
+96 672 l
+</path>
+<path stroke="black">
+96 672 m
+64 640 l
+</path>
+<path stroke="red">
+64 640 m
+128 640 l
+</path>
+<path stroke="black">
+128 640 m
+96 672 l
+</path>
+<path stroke="black">
+64 704 m
+64 640 l
+</path>
+<path stroke="black">
+96 672 m
+160 672 l
+</path>
+<path stroke="red">
 128 640 m
 160 672 l
 </path>
